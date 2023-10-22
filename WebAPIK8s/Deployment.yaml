@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-app-deployment  # Name of the deployment
+spec:
+  replicas: 2  # Number of desired replicas (pods)
+  selector:
+    matchLabels:
+      app: customer-app  # Label selector to match pods controlled by this deployment
+  template:
+    metadata:
+      labels:
+        app: customer-app  # Labels applied to pods created by this deployment
+    spec:
+      containers:
+        - name: customer-app  # Name of the container
+          image: web-api:latest  # Docker image to use
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80  # Port to expose within the pod
+            
