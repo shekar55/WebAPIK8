@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: customer-app-deployment
   labels:
-    app: product-app
+    app: customer-app
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: product-app
+      app: customer-app
   template:
     metadata:
       labels:
-        app: product-app
+        app: customer-app
     spec:
       containers:
-      - name: product-app
-        image: akshayphadke/web-api:latest
-        imagePullPolicy: Never
+      - name: customer-app
+        image: akshayphadke/web-api
         ports:
         - containerPort: 80
+

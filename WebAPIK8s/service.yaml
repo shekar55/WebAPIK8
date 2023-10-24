@@ -2,10 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   name: customer-app-service
+  labels:
+    app: customer-app
 spec:
-  selector:
-    app.kubernetes.io/name: customer-app
-  ports:
-    - protocol: TCP
-      port: 80
   type: NodePort
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 31000
+  selector:
+    app: customer-app
