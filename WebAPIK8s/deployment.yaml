@@ -17,5 +17,6 @@ spec:
       containers:
       - name: product-app
         image: web-api:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 80
