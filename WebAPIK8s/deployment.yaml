@@ -18,5 +18,5 @@ spec:
       - name: customer-app
         image: akshayphadke/web-api
         ports:
-        - containerPort: 80
+        - containerPort: 3000
 
