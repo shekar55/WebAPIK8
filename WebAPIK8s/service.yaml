@@ -5,10 +5,9 @@ metadata:
   labels:
     app: customer-app
 spec:
-  type: NodePort
+  type: LoadBalancer  # Change the type to LoadBalancer
   ports:
   - port: 80
     targetPort: 80
-    nodePort: 31000
   selector:
     app: customer-app
